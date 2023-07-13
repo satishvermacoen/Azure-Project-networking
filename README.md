@@ -8,7 +8,7 @@
 
 ### 2. Point to Site Multiple Virtual Network 
 
-- [Point to Site](https://github.com/satishvermacoen/Azure-LAB/tree/main/Point%20to%20Site%20Multiple-vnet))
+- [Point to Site](https://github.com/satishvermacoen/Azure-LAB/tree/main/Point%20to%20Site%20Multiple-vnet)
 
 
 ### 3. arm-Virtual-Machine
