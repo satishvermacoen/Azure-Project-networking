@@ -1,16 +1,8 @@
-# Azure-AWS VPN connection
 
-A brief description of what this project does and who it's for
+# AWS-AZURE-VPN
 
+A brief description:
+#### How to connect AWS-VPC with AZURE-Virtual Network use of VPN tunneling.
 
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-
-## Tech Stack
-
-**Client:** React, Redux, TailwindCSS
-
-**Server:** Node, Express
+### AZURE Service Requried 
 
