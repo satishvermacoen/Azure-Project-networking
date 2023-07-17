@@ -4,7 +4,7 @@ A brief description.
 
 ## Screenshots
 
-![App Screenshot](https://github.com/satishvermacoen/Azure-LAB/blob/main/aws-azure-vpn-connectivity/img/draw.png)
+![App Screenshot](https://github.com/satishvermacoen/Azure-LAB/blob/main/Point%20to%20Site%20Multiple-vnet/Azure%20Virtual%20Network%20Peering.drawio.png)
 
 ## AZURE Service Requried 
 
@@ -33,12 +33,14 @@ Virtual-Network-1
 
 Now we need to create new virtual network. We can create virtual network using,
 
+```
+New-AzureRmVirtualNetwork -ResourceGroupName REBELVPNRG -Name REBEL-VNET -AddressPrefix 10.2.0.0/16 -Location "East US"
 
- New-AzureRmVirtualNetwork -ResourceGroupName REBELVPNRG -Name REBEL-VNET -AddressPrefix 10.2.0.0/16 -Location "East US"
-
+```
 This is for Virtual-Network-2
 ```
  New-AzureRmVirtualNetwork -ResourceGroupName REBELVPNRG -Name REBEL-VNET2 -AddressPrefix 10.0.0.0/16 -Location "Central India"
+
  ```
 
 In above, REBEL-VNET is the virtual network name. it uses 10.2.0.0/16 IP address range.
@@ -54,14 +56,18 @@ $vn1 = Get-AzureRmVirtualNetwork -ResourceGroupName REBELVPNRG -Name REBEL-VNET
 
 $vn2 = Get-AzureRmVirtualNetwork -ResourceGroupName REBELVPNRG -Name REBEL-VNET2
 
+```
+```
 Add-AzureRmVirtualNetworkSubnetConfig -Name REBEL-SVR-SUB -VirtualNetwork $vn1 -AddressPrefix 10.0.0.0/24
 
 Set-AzureRmVirtualNetwork -VirtualNetwork $vn1
 
+```
+```
 Add-AzureRmVirtualNetworkSubnetConfig -Name REBEL-SVR-SUB -VirtualNetwork $vn2 -AddressPrefix 10.2.0.0/24
 
-
 Set-AzureRmVirtualNetwork -VirtualNetwork $vn2
+
 ```
 ## Create Gateway Subnet
 
