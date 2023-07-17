@@ -34,12 +34,12 @@ Virtual-Network-1
 Now we need to create new virtual network. We can create virtual network using,
 
 ```
-New-AzureRmVirtualNetwork -ResourceGroupName REBELVPNRG -Name REBEL-VNET -AddressPrefix 10.2.0.0/16 -Location "East US"
+New-AzureRmVirtualNetwork -ResourceGroupName REBELVPNRG -Name VNET1 -AddressPrefix 10.2.0.0/16 -Location "East US"
 
 ```
 This is for Virtual-Network-2
 ```
- New-AzureRmVirtualNetwork -ResourceGroupName REBELVPNRG -Name REBEL-VNET2 -AddressPrefix 10.0.0.0/16 -Location "Central India"
+ New-AzureRmVirtualNetwork -ResourceGroupName REBELVPNRG -Name VNET2 -AddressPrefix 10.0.0.0/16 -Location "Central India"
 
  ```
 
@@ -52,9 +52,9 @@ In above, REBEL-VNET is the virtual network name. it uses 10.2.0.0/16 IP address
 Under the virtual network I am going to create a subnet for my servers. To create subnet use,
 
 ```
-$vn1 = Get-AzureRmVirtualNetwork -ResourceGroupName REBELVPNRG -Name REBEL-VNET
+$vn1 = Get-AzureRmVirtualNetwork -ResourceGroupName REBELVPNRG -Name VNET1
 
-$vn2 = Get-AzureRmVirtualNetwork -ResourceGroupName REBELVPNRG -Name REBEL-VNET2
+$vn2 = Get-AzureRmVirtualNetwork -ResourceGroupName REBELVPNRG -Name VNET2
 
 ```
 ```
@@ -69,6 +69,41 @@ Add-AzureRmVirtualNetworkSubnetConfig -Name REBEL-SVR-SUB -VirtualNetwork $vn2 -
 Set-AzureRmVirtualNetwork -VirtualNetwork $vn2
 
 ```
+
+## Virtual Network Peering(Global) 
+
+1. Choose the first virtual network to use in the peering, and select Settings > Add (peering).
+
+2. Configure the peering parameters for the first virtual network.
+
+    The top portion of the Add peering dialog shows settings for this virtual network. The bottom portion of the dialog shows settings for the remote virtual network in the peering.
+
+* Peering link name: Provide a name to identify the peering on this virtual network. The name must be unique within the virtual network.
+
+* Traffic to remote virtual network: Specify how to control traffic to the remote virtual network.
+
+* Allow: Allow communication between resources connected to both of your virtual networks within the peered network.
+
+* Block: Block all traffic to the remote virtual network. You can still allow some traffic to the remote virtual network if you explicitly open the traffic through a network security group rule.
+
+* Traffic forwarded from remote virtual network: Specify how to control traffic that originates from outside your remote virtual network.
+
+* Allow: Forward outside traffic in the remote virtual network to this virtual network within the peering. This parameter lets you forward traffic from outside the remote virtual network, such as traffic from an NVA, to this virtual network.
+
+* Block: Block the forwarding of outside traffic from the remote virtual network to this virtual network within the peering. Again, some traffic can still be forwarded by explicitly opening the traffic through a network security group rule. When you configure traffic forwarding between virtual networks through an Azure VPN gateway, this parameter isn't applicable.
+
+* Virtual network gateway or Route Server: Specify whether your virtual network peering should use an Azure VPN gateway. The default is to not use a VPN gateway (None).
+
+* Configure the peering parameters for your remote virtual network.
+
+     In the Azure portal, you configure the remote virtual network in the peering on the Add peering dialog. The bottom portion shows settings for the remote virtual network. The settings are similar to the parameters described for the first virtual network.
+
+
+3. Create at least one virtual machine in each virtual network.
+
+4. Test communication between the virtual machines within your peered network.
+
+
 ## Create Gateway Subnet
 
 Before we create VN gateway, we need to create gateway subnet for it. so gateway will use ip addresses assigned in this subnet.
@@ -203,7 +238,15 @@ Then run ip config to verify ip allocation from VPN address pool.
 
 In VPN gateway page also, I can see one connection is made.
 
+First we 
 
-I have a server setup under new virtual network we created. This server only has private ip and its 192.168.100.4
+    Take RDP- of Virtual Machine of V-net2 with there private ip 10.0.0.4
+
+After that 
+
+    Take RDP- of Virtual Machine of V-net1 with there private ip 10.2.0.4
+
+
+
 As expected, I can RDP to this via VPN.
 

@@ -9,7 +9,7 @@
 A brief description.
 #### How to connect AWS-VPC with AZURE-Virtual Network use of VPN tunneling.
 
-## Screenshots
+## Diagram
 
 ![App Screenshot](https://github.com/satishvermacoen/Azure-LAB/blob/main/aws-azure-vpn-connectivity/img/draw.png)
 
@@ -32,9 +32,13 @@ A brief description.
 
 - [Point to Site](https://github.com/satishvermacoen/Azure-LAB/tree/main/Point%20to%20Site%20Multiple-vnet)
 
-### AZURE Service Requried 
+## Diagram
 
-1. Two-Virtual Network with same region or diffrent
+![App Screenshot](https://github.com/satishvermacoen/Azure-LAB/blob/main/Point%20to%20Site%20Multiple-vnet/Azure%20Virtual%20Network%20Peering.drawio.png)
+
+## AZURE Service Requried 
+
+1. Virtual Network
 * V-Net(10.2.0.0/16)
 * V-Net(10.0.0.0/16)
 2. VPN Gateway 
