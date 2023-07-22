@@ -1,8 +1,9 @@
 Point to Site Multiple-vnet/draw.png
-Route_table
 AzureDNS
 Azure.CLI
 Azure.Powershell
 ARM_template_Learn
 ultimatescript.sh
 .INTEL.yml
+Route_table/test01
+Route_table/Route_table.txt
