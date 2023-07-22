@@ -44,3 +44,31 @@ A brief description.
 2. VPN Gateway 
 3. Local Area Gateway 
 4. Public IP for Gateway
+
+### Route-Table 
+
+[Route-Table](https://github.com/satishvermacoen/Azure-Project-networking/tree/main/Route_table#route-table)
+
+#### How to connect a Rout table in vitual network to overwrite system-define-Route and traffic flow with central vitual appliance.
+
+## Diagram
+
+![App Screenshot](https://github.com/satishvermacoen/Azure-Project-networking/blob/main/Route_table/Diagram.png)
+
+
+## AZURE Service Requried 
+
+1. Route-table
+2. Virtual Network
+3. 3-Subnet
+4. Vitual Machine in each Subnet.
+5. Bastion Host(optional)
+
+## What to do.
+
+![App Screenshot](https://github.com/satishvermacoen/Azure-Project-networking/blob/main/Route_table/Diagram2.png)
+
+
+
+SEE YOU SOON.............
+
