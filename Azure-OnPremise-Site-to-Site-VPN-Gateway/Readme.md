@@ -1,7 +1,7 @@
 # Site to Site VPN-connection with on-premise
 ![App Screenshot](https://github.com/satishvermacoen/Azure-Project-networking/blob/main/Azure-OnPremise-Site-to-Site-VPN-Gateway/img/diagram.png)
 
-![App Screenshot](https://github.com/satishvermacoen/Azure-Project-networking/blob/main/Azure-OnPremise-Site-to-Site-VPN-Gateway/img/Screenshot%20(69).png)
+![App Screenshot](https://github.com/satishvermacoen/Azure-Project-networking/blob/main/Azure-OnPremise-Site-to-Site-VPN-Gateway/img/Screenshot%20(70).png)
 ## Service Requried 
 
 1. Virtual Network(10.0.0.0/16)
