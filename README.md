@@ -43,7 +43,7 @@
 
 ## Diagram
 
-![App Screenshot](https://github.com/satishvermacoen/Azure-LAB/blob/main/Point%20to%20Site%20Multiple-vnet/Azure%20Virtual%20Network%20Peering.drawio.png)
+![App Screenshot](https://github.com/satishvermacoen/Azure-Project-networking/blob/main/Azure-OnPremise-Site-to-Site-VPN-Gateway/img/diagram.png)
 
 ## Service Requried 
 
